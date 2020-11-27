@@ -49,6 +49,7 @@ const config: webpack.Configuration = merge(common, {
     devServer: {
         compress: true,
         historyApiFallback: true,
+        disableHostCheck: true,
     }
 });
 
