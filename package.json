@@ -53,7 +53,7 @@
     "server:compile": "tsc ./src/server/serverElectron.ts ./src/server/serverLocal.ts --skipLibCheck --lib es2015 --inlineSourceMap --outDir ./dist/server/",
     "start": "concurrently \"npm run start:web\" \"npm run start:server\"",
     "start:server": "npm run server:compile && nodemon --inspect ./dist/server/serverLocal.js",
-    "start:web": "npm run localization && npm run webpack:compile && webpack-dev-server --config webpack.dev.js --mode development --hot --open --port 3000 --host 0.0.0.0",
+    "start:web": "npm run localization && npm run webpack:compile && webpack-dev-server --config webpack.dev.js --mode development --hot --open --port 3000 --host 0.0.0.0 --disable-host-check",
     "test": "npm run localization && jest --coverage --detectOpenHandles",
     "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand -i --watch",
     "test:updateSnapshot": "jest --updateSnapshot",
